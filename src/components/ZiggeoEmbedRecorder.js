@@ -55,8 +55,8 @@ class ZiggeoEmbedRecorder extends Component {
             if (onRecorderManuallySubmitted) onRecorderManuallySubmitted.call();
         }, this);
 
-        this.player.on("uploaded", function () {
-            if (onRecorderUploaded) onRecorderUploaded.call();
+        this.player.on("uploaded", function (data) {
+            if (onRecorderUploaded) onRecorderUploaded.call(data);
         }, this);
 
         this.player.on("upload_selected", function () {
